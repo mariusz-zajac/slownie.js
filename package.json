@@ -1,0 +1,20 @@
+{
+  "name": "slownie",
+  "version": "1.0.0",
+  "description": "Function to write numbers as corresponding words",
+  "main": "slownie.js",
+  "scripts": {
+    "test": "mocha -R landing lib/slownie.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:exu/slownie.js.git"
+  },
+  "keywords": [
+    "Słownie",
+    "slownie",
+    "liczby"
+  ],
+  "author": "Jacek Wysocki",
+  "license": "BSD"
+}
