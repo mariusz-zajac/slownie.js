@@ -11,6 +11,16 @@ Installation
 $ npm install slownie
 ```
 
+Usage
+-----
+```
+
+var Slownie = new require('slownie').Slownie();
+
+console.log( S.get(11122) );%       
+
+```
+
 TODO
 ----
 
