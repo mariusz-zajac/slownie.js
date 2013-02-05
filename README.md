@@ -10,6 +10,19 @@ Installation
 ```
 $ npm install slownie
 ```
+or 
+
+```
+{ "name" : "my-project"
+, "version" : "1.0.0"
+, "dependencies" : { "slownie" : ">= 1.0.0" } }
+```
+
+and then 
+
+```
+$ npm install
+```
 
 Usage
 -----
