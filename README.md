@@ -24,13 +24,12 @@ and then
 $ npm install
 ```
 
-Usage
------
+Usage example
+-------------
 ```
 
 var Slownie = new require('slownie').Slownie();
-
-console.log( S.get(11122) );%       
+console.log( Slownie.get(1939393822) );
 
 ```
 
