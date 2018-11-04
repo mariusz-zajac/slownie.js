@@ -1,6 +1,6 @@
 {
-  "name": "slownie",
-  "version": "1.0.1",
+  "name": "liczby-slownie",
+  "version": "1.0.3",
   "description": "Function to convert numbers as corresponding words",
   "main": "lib/slownie.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:exu/slownie.js.git"
+    "url": "git@github.com:fraunos/slownie.js.git"
   },
   "devDependencies": {
     "should": ">= 0.0.0",
@@ -19,6 +19,6 @@
     "slownie",
     "liczby"
   ],
-  "author": "Jacek Wysocki <jacek.wysocki@gmail.com>",
+  "author": "Michał Wołoszyn <kontakt@fraunos.pl> (https://fraunos.pl)",
   "license": "BSD"
 }
