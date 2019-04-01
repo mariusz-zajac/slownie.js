@@ -3,22 +3,24 @@ Slownie.js
 
 Little library for converting numbers into polish words.
 
-Fork of https://github.com/exu/slownie.js which was ported from C version found at http://4programmers.net/Pastebin/1668
+Works only with integers.
+
+Fork of https://github.com/fraunos/slownie.js.
 
 Installation
 ------------
 
 ```
-$ npm install slownie --save
+$ npm install @abbjs/slownie
 ```
 
 Usage example
 -------------
 ```
-
 const slownie = require('slownie')
-console.log( slownie(1939393822) );
-
+console.log(slownie(1000)); // jeden tysiąc
+console.log(slownie(2003004)); // dwa miliony trzy tysiące cztery
+console.log(slownie(1939393822)); // jeden miliard dziewięćset trzydzieści dziewięć milionów trzysta dziewięćdziesiąt trzy tysiące osiemset dwadzieścia dwa 
 ```
 
 TODO

@@ -1,6 +1,6 @@
 {
-  "name": "liczby-slownie",
-  "version": "1.0.3",
+  "name": "@abbjs/slownie",
+  "version": "1.0.0",
   "description": "Function to convert numbers as corresponding words",
   "main": "lib/slownie.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:fraunos/slownie.js.git"
+    "url": "git@github.com:mariusz-zajac/slownie.js.git"
   },
   "devDependencies": {
     "should": ">= 0.0.0",
@@ -17,8 +17,14 @@
   "keywords": [
     "Słownie",
     "slownie",
-    "liczby"
+    "liczby",
+    "zamiana",
+    "in-words",
+    "to-words"
   ],
-  "author": "Michał Wołoszyn <kontakt@fraunos.pl> (https://fraunos.pl)",
+  "author": {
+    "name": "Mariusz Zając",
+    "email": "abb.mail1@gmail.com"
+  },
   "license": "BSD"
 }
