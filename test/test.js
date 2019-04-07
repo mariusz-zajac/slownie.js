@@ -4,7 +4,6 @@ const slownie = require('../lib/slownie');
 describe('slownie', function () {
 
     it('should be able to transform short into corresponding words', function () {
-        slownie('0').should.equal('zero');
         slownie(0).should.equal('zero');
         slownie(1).should.equal('jeden');
         slownie(2).should.equal('dwa');
@@ -120,12 +119,30 @@ describe('slownie', function () {
         slownie(9007199254740991).should.equal('dziewięć biliardów siedem bilionów sto dziewięćdziesiąt dziewięć miliardów dwieście pięćdziesiąt cztery miliony siedemset czterdzieści tysięcy dziewięćset dziewięćdziesiąt jeden');
     });
 
-    it('should be able to transform very long numbers into corresponding words', function () {
-        slownie('7637956725495713592').should.equal('siedem trylionów sześćset trzydzieści siedem biliardów dziewięćset pięćdziesiąt sześć bilionów siedemset dwadzieścia pięć miliardów czterysta dziewięćdziesiąt pięć milionów siedemset trzynaście tysięcy pięćset dziewięćdziesiąt dwa');
-        slownie('5359365013651650101651').should.equal('pięć tryliardów trzysta pięćdziesiąt dziewięć trylionów trzysta sześćdziesiąt pięć biliardów trzynaście bilionów sześćset pięćdziesiąt jeden miliardów sześćset pięćdziesiąt milionów sto jeden tysięcy sześćset pięćdziesiąt jeden');
+    it('should be able to transform negative numbers into corresponding words', function () {
+        slownie(-0).should.equal('zero');
+        slownie(-1001).should.equal('minus jeden tysiąc jeden');
+        slownie(-45327).should.equal('minus czterdzieści pięć tysięcy trzysta dwadzieścia siedem');
+        slownie(-9748354358).should.equal('minus dziewięć miliardów siedemset czterdzieści osiem milionów trzysta pięćdziesiąt cztery tysiące trzysta pięćdziesiąt osiem');
+        slownie(-134892492054300).should.equal('minus sto trzydzieści cztery biliony osiemset dziewięćdziesiąt dwa miliardy czterysta dziewięćdziesiąt dwa miliony pięćdziesiąt cztery tysiące trzysta');
+        slownie(-9007199254740991).should.equal('minus dziewięć biliardów siedem bilionów sto dziewięćdziesiąt dziewięć miliardów dwieście pięćdziesiąt cztery miliony siedemset czterdzieści tysięcy dziewięćset dziewięćdziesiąt jeden');
     });
 
     it('should throw error for too long numbers', function () {
-        should.throws(() => slownie('1000000000000000000000000000'), 'Too long number.');
+        should.throws(() => slownie(9007199254740992), /The number is not safe integer/);
+        should.throws(() => slownie(9007199254740993), /The number is not safe integer/);
+        should.throws(() => slownie(10000000000000000), /The number is not safe integer/);
+        should.throws(() => slownie(-10000000000000000), /The number is not safe integer/);
+    });
+
+    it('should throw error for not integers', function () {
+        should.throws(() => slownie('0'), /The number is not safe integer/);
+        should.throws(() => slownie('100'), /The number is not safe integer/);
+        should.throws(() => slownie(''), /The number is not safe integer/);
+        should.throws(() => slownie([]), /The number is not safe integer/);
+        should.throws(() => slownie({}), /The number is not safe integer/);
+        should.throws(() => slownie(null), /The number is not safe integer/);
+        should.throws(() => slownie(0.1), /The number is not safe integer/);
+        should.throws(() => slownie(1.005), /The number is not safe integer/);
     });
 });
